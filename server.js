@@ -5,7 +5,7 @@ const FBApiModule = require("./fb-api");
 const Keys = require("./config/keys");
 
 const { pageID, appID, appSecret, validationToken, pageToken } = Keys;
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 // build bot
 const FbBot = FBApiModule.create({
