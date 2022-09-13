@@ -42,8 +42,6 @@ const handleEventRequest = (body, signature, thisClass) => {
 
       if (entry.hasOwnProperty("changes")) {
         entry.changes.forEach((changes) => {
-          console.log(changes);
-
           if (
             changes.field == "feed" &&
             changes.value.item == "comment" &&

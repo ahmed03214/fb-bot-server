@@ -1,6 +1,7 @@
 // const Events = require("./Events");
 const { parseRequestUrl, handleEventRequest } = require("../helper");
 const EventEmitter = require("events").EventEmitter;
+const { validationToken } = require("../../config/keys");
 
 class FBApi extends EventEmitter {
   // Private Keys
@@ -35,7 +36,7 @@ class FBApi extends EventEmitter {
 
       if (
         query["hub.mode"] === "subscribe" &&
-        query["hub.verify_token"] === "MARO246810"
+        query["hub.verify_token"] === validationToken
       ) {
         return res.status(200).send(query["hub.challenge"]);
       }
